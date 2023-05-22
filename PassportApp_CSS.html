@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+
+            padding: 40px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 250px;
+            margin-right: 250px;
+        }
+
+        .container>div {
+            border: 1px solid #ccc;
+            padding: 10px;
+            background-color: rgb(246, 236, 246);
+        }
+
+        .pagination {
+            display: inline-block;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+            border: 1px solid #ddd;
+        }
+
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid gray;
+            padding: 8px;
+            text-align: left;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: purple;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Passport Application Form</h1>
+
+    <div class="container">
+      
+        <div class="pagination">
+            <a href="#Service" class="active">Service Required</a>
+            <a href="#ApplicantD">Applicant Details</a>
+            <a href="#FamilyD">Family Details</a>
+            <a href=""
+            <!-- <a href="#">Link 3</a> -->
+        </div>
+
+        <div>
+
+            <h2 id="Service"><b>Service Required</b></h2>
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        <h3>Upload Photo</h3>
+                    </td>
+                    <td>
+                        <input type="file" name="photo" accept="image/*">
+                        <input type="submit" value="Upload">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Upload E-Sign/Thumb</h3>
+                    </td>
+                    <td>
+                        <input type="file" name="sign" accept="image/*">
+                        <input type="submit" value="Upload">
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><label for="applying">
+                            <h3>Applying for:</h3>
+                        </label></td>
+                    <td>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="applying" id="applyingFresh"
+                                value="fresh" required>
+                            <label class="form-check-label" for="applyingFresh">Fresh Passport</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="applying" id="applyingReissue"
+                                value="reissue" required>
+                            <label class="form-check-label" for="applyingReissue">Re-issue of Passport</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="reasons">
+                            <h3>If re-issue, specify reason(s):</h3>
+                        </label></td>
+                    <td>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="reasons" id="reasonValidity3"
+                                value="validity3">
+                            <label class="form-check-label" for="reasonValidity3">Validity expired within 3
+                                years/due to
+                                Expire</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="reasons" id="reasonExhaustion"
+                                value="exhaustion">
+                            <label class="form-check-label" for="reasonExhaustion">Exhaustion of Pages</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="reasons" id="reasonValidityMore"
+                                value="validityMore">
+                            <label class="form-check-label" for="reasonValidityMore">Validity expired more than 3
+                                years
+                                ago</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="reasons" id="reasonLost" value="lost">
+                            <label class="form-check-label" for="reasonLost">Lost Passport</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="reasons" id="reasonChange"
+                                value="change">
+                            <label class="form-check-label" for="reasonChange">Change in existing Personal
+                                Particulars</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="reasons" id="reasonDamaged"
+                                value="damaged">
+                            <label class="form-check-label" for="reasonDamaged">Damaged Passport</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="reasons" id="reasonDamaged"
+                                value="damaged">
+                            <label class="form-check-label" for="reasonDamaged">Other resons, specify in the below
+                                box</label>
+                        </div>
+                        <br>
+
+                        <textarea name="changeOthers" id="changeOthers" value="others"
+                            cols="50">Other,specify here:</textarea>
+
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="Types">
+                            <h3>Type of Application:</h3>
+                        </label></td>
+                    <td>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type" id="typeNormal" value="normal">
+                            <label class="form-check-label" for="typeNormal">Normal</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type" id="typeTatkaal" value="tatkaal">
+                            <label class="form-check-label" for="typeTatkaal">Tatkaal</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="Types">
+                            <h3>Type of Passport Booklet:</h3>
+                        </label></td>
+                    <td>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type1" id="type36" value="36">
+                            <label class="form-check-label" for="type36">36 Pages</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type1" id="type60" value="60">
+                            <label class="form-check-label" for="type60">60 Pages</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="validation">
+                            <h3>Validity Required:</h3>
+                        </label></td>
+                    <td>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type2" id="type10" value="10">
+                            <label class="form-check-label" for="type10">10 Years</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="type2" id="type18" value="18">
+                            <label class="form-check-label" for="type18">Upto 18 Years</label>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <h3>If change in existing personal particulars, specify reason(s):</h3>
+                    </td>
+                    <td>
+                        <div><input class="form-check-input" type="checkbox" name="change" id="changeAppearance"
+                                value="appearance">
+                            <label class="form-check-label" for="changeAppearance">Appearance</label>
+                        </div>
+                        <div><input class="form-check-input" type="checkbox" name="change" id="changeSignature"
+                                value="signature">
+                            <label class="form-check-label" for="changeSignature">Signature</label>
+                        </div>
+                        <div><input class="form-check-input" type="checkbox" name="change" id="changeGivenName"
+                                value="given-name">
+                            <label class="form-check-label" for="changeGivenName">Given Name</label>
+                        </div>
+                        <div><input class="form-check-input" type="checkbox" name="change" id="changeSurname"
+                                value="surname">
+                            <label class="form-check-label" for="changeSurname">Surname</label>
+                        </div>
+                        <div><input class="form-check-input" type="checkbox" name="change" id="changeDateOfBirth"
+                                value="date-of-birth">
+                            <label class="form-check-label" for="changeDateOfBirth">Date of Birth</label>
+                        </div>
+                        <div><input class="form-check-input" type="checkbox" name="change" id="changeSpouseName"
+                                value="spouse-name">
+                            <label class="form-check-label" for="changeSpouseName">Spouse Name</label>
+                        </div>
+                        <div><input class="form-check-input" type="checkbox" name="change" id="changeAddress"
+                                value="address">
+                            <label class="form-check-label" for="changeAddress">Address</label>
+                        </div>
+                        <div><input class="form-check-input" type="checkbox" name="change" id="changeDeleteECR"
+                                value="delete-ecr">
+                            <label class="form-check-label" for="changeDeleteECR">Delete ECR</label>
+                        </div>
+                        <div><input class="form-check-input" type="checkbox" name="change" id="changeOthers"
+                                value="changeOthers" />Other, Specify below in the text area
+                        </div>
+                        <br>
+                        <textarea name="changeOthers" id="changeOthers" value="others" cols="50"
+                            cols="25">Other,specify here:</textarea>
+
+
+                    </td>
+                </tr>
+            </table>
+            <br><br>
+
+
+        </div>
+        <div class="pagination">
+            <a href="#">❮</a>
+            <a href="#ApplicantD">❯</a>
+          </div>
+
+    </div>
+
+    <div class="container">
+        <div>
+            <h2 id="ApplicantD"><b>Applicant Details</b></h2>
+            <br><br>
+            <table>
+                <form class="needs-validation" novalidate>
+
+                    <tr>
+                        <div class="form-group">
+                            <td><label for="givenName">
+                                    <h3>Full Name:</h3>
+                                </label></td>
+                            <td><input type="text" class="form-control" id="givenName" name="givenName" required>
+                            </td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="form-group">
+                            <td><label for="dob">
+                                    <h3>Date of Birth:</h3>
+                                </label></td>
+                            <td><input type="date" class="form-control" id="dob" name="dob" required></td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="form-group">
+                            <td><label for="city">
+                                    <h3>City:</h3>
+                                </label></td>
+                            <td><input type="text" class="form-control" id="city" name="city" required></td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="form-group">
+                            <td><label for="district">
+                                    <h3>District:</h3>
+                                </label></td>
+                            <td><input type="text" class="form-control" id="district" name="district" required></td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="form-group">
+                            <td><label for="state">
+                                    <h3>State:</h3>
+                                </label></td>
+                            <td><input type="text" class="form-control" id="state" name="state" required></td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <div class="form-group">
+                            <td><label for="country">
+                                    <h3>Country:</h3>
+                                </label></td>
+                            <td><input type="text" class="form-control" id="country" name="country" required></td>
+                        </div>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">
+                                <h3>Gender:</h3>
+                            </label></td>
+                        <td>
+                            <input type="radio" class="form-check-input" id="male" name="gender" value="male"
+                                required />Male
+                            <input type="radio" class="form-check-input" id="female" name="gender"
+                                value="female" />Female
+                            <input type="radio" class="form-check-input" id="trans" name="gender"
+                                value="trans" />Transgender
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="marital">
+                                <h3>Marital Status:</h3>
+                            </label></td>
+                        <td>
+
+                            <input type="radio" class="form-check-input" id="single" name="marital" value="single"
+                                required />Single
+
+
+                            <input type="radio" class="form-check-input" id="married" name="marital"
+                                value="married" />Married
+
+
+                            <input type="radio" class="form-check-input" id="Divorced" name="marital"
+                                value="Divorced" />Divorced
+
+
+                            <input type="radio" class="form-check-input" id="Widow/Widower" name="marital"
+                                value="Widow/Widower" />Widow/Widower
+
+                            <input type="radio" class="form-check-input" id="separated" name="marital"
+                                value="separated" />Separated
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="gender">
+                                <h3>Citizenship of India by:</h3>
+                            </label></td>
+                        <td>
+
+                            <input type="radio" class="form-check-input" id="birth" name="citizenship" value="birth"
+                                required />Birth
+
+
+                            <input type="radio" class="form-check-input" id="descent" name="citizenship"
+                                value="descent" />Descent
+
+                            <input type="radio" class="form-check-input" id="registration" name="citizenship"
+                                value="registration" />Registration
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="PAN">
+                                <h3>PAN Number:</h3>
+                            </label></td>
+                        <td>
+                            <input type="text" class="form-control" id="PAN" name="PAN" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="VI">
+                                <h3>Voter ID:</h3>
+                            </label></td>
+                        <td>
+                            <input type="text" class="form-control" id="VI" name="VI" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="employment">
+                                <h3>Employment Type:</h3>
+                            </label></td>
+                        <td>
+                            <select id="employment" name="employment" required>
+                                <option value="">Select your option</option>
+                                <option value="PSU">PSU</option>
+                                <option value="Government">Government</option>
+                                <option value="Statutory">Statutory Body</option>
+                                <option value="Retired">Retired Government Servant</option>
+                                <option value="Self">Self Employed</option>
+                                <option value="Private">Private</option>
+                                <option value="Homemaker">Homemaker</option>
+                                <option value="Not">Not Employed</option>
+                                <option value="Retired">Retired-Private Service</option>
+                                <option value="Student">Student</option>
+                                <option value="Others">Others</option>
+                                <option value="Owners">Owners,Partners & Directors of companies which are members of
+                                    CII,
+                                    FICCI &
+                                    ASSOCHAM</option>
+                            </select>
+                        </td>
+                    </tr>
+            </table>
+            <br>
+            <table>
+                <h3>If employed in Government/ Statutory Body/ PSU, specify organization
+                    name:</h3>
+                <tr>
+                    <td>
+                        <h3>organization Name:</h3>
+                    </td>
+                    <td><input type="text" class="form-control" id="OrgName" name="OrgName" required></td>
+                </tr>
+            </table>
+            <table>
+                <h3>Is either of your parent (in case of minor)/ spouse, a government
+                    servant?</h3>
+                <tr>
+                    <td>
+                        <input type="radio" class="form-check-input" id="yes" name="govser" value="Yes" required />Yes
+                    </td>
+                    <td>
+                        <input type="radio" class="form-check-input" id="no" name="govser" value="No" />No
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <td>
+                        <h3>Educational Qualification:</h3>
+                    </td>
+                    <td>
+                        <select id="employment" name="employment" required>
+                            <option value="">Select your option</option>
+                            <option value="7th">7th pass or less</option>
+                            <option value="8th">Between 8th and 9th Standard\</option>
+                            <option value="10th">10th pass and above</option>
+                            <option value="Graduate">Graduate and above</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <h3>Are you eligible for Non-ECR category?</h3>
+                <tr>
+                    <td>
+                        <input type="radio" class="form-check-input" id="Yes" name="ECR" value="Yes" required />Yes
+                    </td>
+                    <td>
+                        <input type="radio" class="form-check-input" id="No" name="ECR" value="No" />No
+                    </td>
+                </tr>
+
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <td>
+                        <h3>Visible Distinguishing Mark:</h3>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="givenName" name="givenName" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Aadhar Number:</h3>
+                    </td>
+                    <td>
+                        <input type="number" class="form-control" id="givenName" name="givenName" required>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="pagination">
+            <a href="#Service">❮</a>
+            <a href="#FamilyD">❯</a>
+          </div>
+
+    </div>
+
+    <div class="container">
+        <div>
+            <h2 id="FamilyD"><b>Family Details</b></h2>
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        <h3>Father's Full Name:</h3>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="fatherName" name="givenName" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Mother's Full Name:</h3>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="motherName" name="givenName" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Legal Guardian's Full Name:</h3>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="guardName" name="givenName" required>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Spouse's Full Name:</h3>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" id="spouseName" name="givenName" required>
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <h3>Note : If applicant is minor, provide following details:</label>
+                    <label>Parent's Passport Details (If passport has been applied for but not received, give File
+                        Number)
+                </h3>
+                <div>
+                    <h3>Father/ Legal Guardian's File/ Passport Number:</h3>
+                    <input type="number" class="form-control" id="passNumf" name="passNumf" required>
+                </div>
+                <div>
+                    <h3>Father/ Legal Guardian's Nationality, if not Indian:</h3>
+                    <input type="text" class="form-control" id="fNationality" name="fNationality" required>
+                </div>
+                <div>
+                    <h3>Mother/ Legal Guardian's File/ Passport Number:</h3>
+                    <input type="number" class="form-control" id="passNumm" name="passNumm" required>
+                </div>
+                <div>
+                    <h3>Mother/ Legal Guardian's Nationality, if not Indian:</h3>
+                    <input type="text" class="form-control" id="mNationality" name="mNationality" required>
+                </div>
+            </table>
+
+        </div>
+        <div class="pagination">
+            <a href="#ApplicantD">❮</a>
+            <a href="#FamilyD">❯</a>
+          </div>
+
+
+    </div>
+    <div class="container">
+        <div>
+            <h2 id="ResidentialD"><b>Present Residential Address Details</b></h2>
+            <br><br>
+            <table>
+                <tr>
+                    <td>
+                        <h2>House No. & Street Name:</h2>
+                    </td>
+                    <td>
+                        <textarea cols="50"></textarea>
+                    </td>
+                </tr>
+            </table>
+
+</body>
+
+</html>

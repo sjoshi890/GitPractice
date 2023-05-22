@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Passport Application Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+             font-family: Arial, sans-serif;
+             margin: 20px;
+             background-color: #f8f9fa;
+         }
+ 
+         h1 {
+             text-align: center;
+             background-color: #343a40;
+             color: white;
+             padding: 10px;
+         }
+ 
+         h2 {
+             background-color: #e9ecef;
+             padding: 10px;
+         }
+ 
+         label {
+             font-weight: bold;
+         }
+
+         .form-check-label {
+             margin-right: 20px;
+         }
+ 
+         .form-group {
+             margin-bottom: 20px;
+         }
+ 
+         .invalid-feedback {
+             display: none;
+             color: red;
+             margin-top: 5px;
+         }
+ 
+         .form-control.is-invalid,
+         .was-validated .form-control:invalid {
+             border-color: red;
+             box-shadow: none;
+         }
+ 
+         .was-validated .form-control:invalid~.invalid-feedback {
+             display: block;
+         }
+ 
+         .page {
+             display: none;
+         }
+ 
+         .page.active {
+             display: block;
+         }
+ 
+         .pagination {
+             margin-top: 20px;
+         }
+ 
+         .pagination button {
+             margin: 0 5px;
+         }
+         div {
+            background-color: slategrey;
+         }
+     </style>
+</head>
+
+<body>
+    <div class="container" >
+        <h1>Passport Application Form</h1>
+        <h2><b>Service Required</b></h2>
+        <br><br>
+
+        <label for="applying">Applying for:</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="applying" id="applyingFresh" value="fresh" required>
+            <label class="form-check-label" for="applyingFresh">Fresh Passport</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="applying" id="applyingReissue" value="reissue" required>
+            <label class="form-check-label" for="applyingReissue">Re-issue of Passport</label>
+        </div>
+        <br><br>
+
+        <label for="reasons">If re-issue, specify reason(s):</label>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="reasons" id="reasonValidity3" value="validity3">
+            <label class="form-check-label" for="reasonValidity3">Validity expired within 3 years/due to Expire</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="reasons" id="reasonExhaustion" value="exhaustion">
+            <label class="form-check-label" for="reasonExhaustion">Exhaustion of Pages</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="reasons" id="reasonValidityMore" value="validityMore">
+            <label class="form-check-label" for="reasonValidityMore">Validity expired more than 3 years ago</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="reasons" id="reasonLost" value="lost">
+            <label class="form-check-label" for="reasonLost">Lost Passport</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="reasons" id="reasonChange" value="change">
+            <label class="form-check-label" for="reasonChange">Change in existing Personal Particulars</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="reasons" id="reasonDamaged" value="damaged">
+            <label class="form-check-label" for="reasonDamaged">Damaged Passport</label>
+        </div>
+        <br><br>
+
+        <label for="reasons">If change in existing personal particulars, specify reason(s):</label>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="change" id="changeAppearance" value="appearance">
+            <label class="form-check-label" for="changeAppearance">Appearance</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="change" id="changeSignature" value="signature">
+            <label class="form-check-label" for="changeSignature">Signature</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="change" id="changeGivenName" value="given-name">
+            <label class="form-check-label" for="changeGivenName">Given Name</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="change" id="changeSurname" value="surname">
+            <label class="form-check-label" for="changeSurname">Surname</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="change" id="changeDateOfBirth" value="date-of-birth">
+            <label class="form-check-label" for="changeDateOfBirth">Date of Birth</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="change" id="changeSpouseName" value="spouse-name">
+            <label class="form-check-label" for="changeSpouseName">Spouse Name</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="change" id="changeAddress" value="address">
+            <label class="form-check-label" for="changeAddress">Address</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="change" id="changeDeleteECR" value="delete-ecr">
+            <label class="form-check-label" for="changeDeleteECR">Delete ECR</label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="change" id="changeOthers" value="others">
+            <label class="form-check-label" for="changeOthers">Others, Please specify</label>
+        </div>
+        <br><br>
+
+        <label for="Types">Type of Application:</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="type" id="typeNormal" value="normal">
+            <label class="form-check-label" for="typeNormal">Normal</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="type" id="typeTatkaal" value="tatkaal">
+            <label class="form-check-label" for="typeTatkaal">Tatkaal</label>
+        </div>
+        <br><br>
+
+        <label for="Types">Type of Passport Booklet:</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="type" id="type36" value="36">
+            <label class="form-check-label" for="type36">36 Pages</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="type" id="type60" value="60">
+            <label class="form-check-label" for="type60">60 Pages</label>
+        </div>
+        <br><br>
+
+        <label for="validation">Validity Required:</label>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="type" id="type10" value="10">
+            <label class="form-check-label" for="type10">10 Years</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="type" id="type18" value="18">
+            <label class="form-check-label" for="type18">Upto 18 Years</label>
+        </div>
+        <br><br>
+        <br><br>
+        <br><br>
+
+        <h2><b>User Information Form</b></h2>
+        <br><br>
+        <table>
+        <form class="needs-validation" novalidate>
+            <tr>
+            <div class="form-group">
+                <td><label for="givenName">Full Name:</label></td>
+                <td><input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter your Full name.</div></td>
+            </div>
+            </tr>
+        </table>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" class="form-control" id="dob" name="dob" required>
+                <div class="invalid-feedback">Please enter your date of birth.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" class="form-control" id="city" name="city" required>
+                <div class="invalid-feedback">Please enter your city.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="district">District:</label>
+                <input type="text" class="form-control" id="district" name="district" required>
+                <div class="invalid-feedback">Please enter your district.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="state">State:</label>
+                <input type="text" class="form-control" id="state" name="state" required>
+                <div class="invalid-feedback">Please enter your state.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country:</label>
+                <input type="text" class="form-control" id="country" name="country" required>
+                <div class="invalid-feedback">Please enter your country.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Gender:</label>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="male" name="gender" value="male" required>
+                    <label class="form-check-label" for="male">Male</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="female" name="gender" value="female">
+                    <label class="form-check-label" for="female">Female</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="trans" name="gender" value="trans">
+                    <label class="form-check-label" for="trans">Transgender</label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="marital">Marital Status:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="single" name="marital" value="single" required>
+                    <label class="form-check-label" for="single">Single</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="married" name="marital" value="married">
+                    <label class="form-check-label" for="married">Married</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="Divorced" name="marital" value="Divorced">
+                    <label class="form-check-label" for="Divorced">Divorced</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="Widow/Widower" name="marital"
+                        value="Widow/Widower">
+                    <label class="form-check-label" for="Widow/Widower">Widow/Widower</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="separated" name="marital" value="separated">
+                    <label class="form-check-label" for="separated">Separated</label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="gender">Citizenship of India by:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="birth" name="citizenship" value="birth" required>
+                    <label class="form-check-label" for="birth">Birth</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="descent" name="citizenship" value="descent">
+                    <label class="form-check-label" for="descent">Descent</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="registration" name="citizenship"
+                        value="registration">
+                    <label class="form-check-label" for="registration">Registration/Naturalization</label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="PAN">PAN Number:</label>
+                <input type="text" class="form-control" id="PAN" name="PAN" required>
+                <div class="invalid-feedback">Please enter your PAN Number.</div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="VI">Voter ID:</label>
+                <input type="text" class="form-control" id="VI" name="VI" required>
+                <div class="invalid-feedback">Please enter your Voter ID</div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="employment">Employment Type:</label><br>
+                <select id="employment" name="employment" required>
+                    <option value="">Select your option</option>
+                    <option value="single">PSU</option>
+                    <option value="married">Government</option>
+                    <option value="Divorced">Statutory Body</option>
+                    <option value="Widow/Widower">Retired Government Servant</option>
+                    <option value="separated">Self Employed</option>
+                    <option value="single">Private</option>
+                    <option value="married">Homemaker</option>
+                    <option value="Divorced">Not Employed</option>
+                    <option value="Widow/Widower">Retired-Private Service</option>
+                    <option value="separated">Student</option>
+                    <option value="Widow/Widower">Others</option>
+                    <option value="separated">Owners,Partners & Directors of companies which are members of CII, FICCI &
+                        ASSOCHAM</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">If employed in Government/ Statutory Body/ PSU, specify organization
+                    name:</label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter name of organization.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Is either of your parent (in case of minor)/ spouse, a government
+                    servant?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="birth" name="citizenship" value="birth" required>
+                    <label class="form-check-label" for="birth">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="descent" name="citizenship" value="descent">
+                    <label class="form-check-label" for="descent">No</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Educational Qualification:</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="birth" name="citizenship" value="birth" required>
+                    <label class="form-check-label" for="birth">7th pass or less</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="descent" name="citizenship" value="descent">
+                    <label class="form-check-label" for="descent">Between 8th and 9th Standard
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="birth" name="citizenship" value="birth" required>
+                    <label class="form-check-label" for="birth">10th pass and above</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="descent" name="citizenship" value="descent">
+                    <label class="form-check-label" for="descent">Graduate and above</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Are you eligible for Non-ECR category?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="birth" name="citizenship" value="birth" required>
+                    <label class="form-check-label" for="birth">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="descent" name="citizenship" value="descent">
+                    <label class="form-check-label" for="descent">No
+                    </label>
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="givenName"> Visible Distinguishing Mark:</label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Distinguishing mark</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Aadhar Number:</label>
+                <input type="number" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Aadhar Number</div>
+            </div>
+            <br><br>
+
+            <h2><b>Family Details</b></h2>
+            <br><br>
+            <div class="form-group">
+                <label for="givenName">Father's Full Name</label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Father's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Mother's Full Name</label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Mother's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Legal Guardian's Full Name</label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Guardian's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Spouse's Full Name</label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Spouse's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Note : If applicant is minor, provide following details:</label>
+                <label>Parent's Passport Details (If passport has been applied for but not received, give File Number)</label>
+                  <label>Father/ Legal Guardian's File/ Passport Number:</label>  
+                <input type="number" class="form-control" id="givenName" name="givenName" required>
+                <label>Father/ Legal Guardian's Nationality, if not Indian:</label>  
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Father's Nationality</div>
+                <label>Mother/ Legal Guardian's File/ Passport Number:</label>  
+                <input type="number" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Mother's Passport number</div>
+                <label>Mother/ Legal Guardian's Nationality, if not Indian:</label>  
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Mother's Nationality</div>
+                
+            </div>
+            <br><br>
+
+
+            <h2><b>Present Residential Address Details</b></h2>
+            <br><br>
+            <div class="form-group">
+                <label for="givenName">House No. and Street Name
+                </label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Father's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Village or Town or City</label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Mother's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">District</label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Guardian's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Police Station</label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Spouse's Name</div>
+            </div>
+            <div class="form-group">
+                <label for="givenName">State/ UT</label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Father's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">PIN</label>
+                <input type="number" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Mother's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Mobile Number</label>
+                <input type="number" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Guardian's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Telephone Number</label>
+                <input type="number" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Spouse's Name</div>
+            </div>
+            <div class="form-group">
+                <label for="givenName">E-mail ID</label>
+                <input type="email" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Spouse's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="gender">Is permanent address same as present address?</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="birth" name="citizenship" value="birth" required>
+                    <label class="form-check-label" for="birth">Yes</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" id="descent" name="citizenship" value="descent">
+                    <label class="form-check-label" for="descent">No
+                    </label>
+                </div>
+                <br><br>
+                <br><br>
+                <br><br>
+
+                <h2><b>Emergency Contact Details</b></h2>
+            <br><br>
+            <div class="form-group">
+                <label for="givenName">Name
+                </label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Father's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Address</label>
+                <input type="text" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Mother's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Mobile Number</label>
+                <input type="number" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Guardian's Name</div>
+            </div>
+
+            <div class="form-group">
+                <label for="givenName">Telephone Number</label>
+                <input type="number" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Spouse's Name</div>
+            </div>
+            <div class="form-group">
+                <label for="givenName">E-mail ID</label>
+                <input type="email" class="form-control" id="givenName" name="givenName" required>
+                <div class="invalid-feedback">Please enter Father's Name</div>
+            </div>
+
+
+
+
+
+    </div>

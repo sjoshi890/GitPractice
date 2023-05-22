@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passport Application Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+
+        h1 {
+            text-align: center;
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+        }
+
+        h2 {
+            background-color: #e9ecef;
+            padding: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        .form-check-label {
+            margin-right: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .invalid-feedback {
+            display: none;
+            color: red;
+            margin-top: 5px;
+        }
+
+        .form-control.is-invalid,
+        .was-validated .form-control:invalid {
+            border-color: red;
+            box-shadow: none;
+        }
+
+        .was-validated .form-control:invalid~.invalid-feedback {
+            display: block;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .pagination {
+            margin-top: 20px;
+        }
+
+        .pagination button {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Passport Application Form</h1>
+
+        <!-- Page 1 -->
+        <div class="page active">
+            <h3> Service Required </h3>
+            <br><br>
+
+            <label for="applying"><b>Applying for:</b></label>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="applying" id="applyingFresh" value="fresh" required>
+                <label class="form-check-label" for="applyingFresh">Fresh Passport</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="applying" id="applyingReissue" value="reissue" required>
+                <label class="form-check-label" for="applyingReissue">Re-issue of Passport</label>
+            </div>
+            <br><br>
+
+            <label for="reasons"><b>If re-issue, specify reason(s):</b></label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="reasons" id="reasonValidity3" value="validity3">
+                <label class="form-check-label" for="reasonValidity3">Validity expired within 3 years/due to Expire</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="reasons" id="reasonExhaustion" value="exhaustion">
+                <label class="form-check-label" for="reasonExhaustion">Exhaustion of Pages</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="reasons" id="reasonValidityMore" value="validityMore">
+                <label class="form-check-label" for="reasonValidityMore">Validity expired more than 3 years ago</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="reasons" id="reasonLost" value="lost">
+                <label class="form-check-label" for="reasonLost">Lost Passport</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="reasons" id="reasonChange" value="change">
+                <label class="form-check-label" for="reasonChange">Change in existing Personal Particulars</label>
+                </div>
+                <div class="form-check">
+                <input class="form-check-input" type="radio" name="reasons" id="reasonDamaged" value="damaged">
+                <label class="form-check-label" for="reasonDamaged">Damaged Passport</label>
+                </div>
+                <br><br>
+                <button class="next-btn">Next</button>
+            </div>
+        
+            <!-- Page 2 -->
+            <div class="page">
+                <label for="reasons"><b>If change in existing personal particulars, specify reason(s):</b></label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="change" id="changeAppearance" value="appearance">
+                    <label class="form-check-label" for="changeAppearance">Appearance</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="change" id="changeSignature" value="signature">
+                    <label class="form-check-label" for="changeSignature">Signature</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="change" id="changeGivenName" value="given-name">
+                    <label class="form-check-label" for="changeGivenName">Given Name</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="change" id="changeSurname" value="surname">
+                    <label class="form-check-label" for="changeSurname">Surname</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="change" id="changeDateOfBirth" value="date-of-birth">
+                    <label class="form-check-label" for="changeDateOfBirth">Date of Birth</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="change" id="changeSpouseName" value="spouse-name">
+                    <label class="form-check-label" for="changeSpouseName">Spouse Name</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="change" id="changeAddress" value="address">
+                    <label class="form-check-label" for="changeAddress">Address</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="change" id="changeDeleteECR" value="delete-ecr">
+                    <label class="form-check-label" for="changeDeleteECR">Delete ECR</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="change" id="changeOthers" value="others">
+                    <label class="form-check-label" for="changeOthers">Others, Please specify</label>
+                </div>
+                <br><br>
+        
+                <button class="prev-btn">Previous</button>
+                <button class="next-btn">Next</button>
+            </div>
+        
+            <!-- Page 3 -->
+            <div class="page">
+                <label for="Types"><b>Type of Application:</b></label>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" id="typeNormal" value="normal">
+                    <label class="form-check-label" for="typeNormal">Normal</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="type" id="typeTatkaal" value="tatkaal">
+                    <label class="form-check-label" for="typeTatkaal">Tatkaal</label>
+                    </div>
+                    <br><br>
+                    <button class="prev-btn">Previous</button>
+                    <button class="next-btn">Next</button>
+                </div>
+            
+                <!-- Page 4 -->
+                <div class="page">
+                    <label for="Types"><b>Type of Passport Booklet:</b></label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="type" id="type36" value="36">
+                        <label class="form-check-label" for="type36">36 Pages</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="type" id="type60" value="60">
+                        <label class="form-check-label" for="type60">60 Pages</label>
+                    </div>
+                    <br><br>
+            
+                    <button class="prev-btn">Previous</button>
+                    <button class="next-btn">Next</button>
+                </div>
+            
+                <!-- Page 5 -->
+                <div class="page">
+                    <label for="Types"><b>Validity Required:</b></label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="type" id="type10" value="10">
+                        <label class="form-check-label" for="type10">10 Years</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="type" id="type18" value="18">
+                        <label class="form-check-label" for="type18">Upto 18 Years</label>
+                    </div>
+                    <br><br>
+            
+                    <button class="prev-btn">Previous</button>
+                    <button class="submit-btn">Submit</button>
+                </div>
+            </div>
+            
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    var currentStep = 0;
+                    var pages = $(".page");
+                    var prevBtn = $(".prev-btn");
+                    var nextBtn = $(".next-btn");
+                    var submitBtn = $(".submit-btn");
+            
+                    function showPage(step) {
+                        pages.hide();
+                        $(pages[step]).show();
+                    }
+            
+                    function updateButtons() {
+                        if (currentStep === 0) {
+                            prevBtn.hide();
+                        } else {
+                            prevBtn.show();
+                        }
+            
+                        if (currentStep === pages.length - 1) {
+                            nextBtn.hide();
+                            submitBtn.show();
+                        } else {
+                            nextBtn.show();
+                            submitBtn.hide();
+                        }
+                    }
+            
+                    prevBtn.click(function() {
+                        currentStep--;
+                        showPage(currentStep);
+                        updateButtons();
+                    });
+            
+                    nextBtn.click(function() {
+                        currentStep++;
+                        showPage(currentStep);
+                        updateButtons();
+                    });
+            
+                    showPage(currentStep);
+                    updateButtons();
+                });
+            </script>
+</body>
+</html>            
+        

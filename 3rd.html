@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sidebar Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .sidebar {
+      width: 250px;
+      background-color: rgb(17, 42, 42);
+      padding: 20px;
+      color: wheat;
+      padding-top: 5%;
+      padding-bottom: 20%;
+    }
+
+    .section {
+      margin-bottom: 15px;
+      font-size: larger;
+    }
+
+    .section > label {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color: white;
+      display: flex;
+      align-items: center;
+    }
+
+    .section-title {
+      cursor: pointer;
+      margin-left: 5px;
+    }
+
+    .section-header {
+      color: cadetblue;
+    }
+
+
+    h1 {
+      color: cadetblue;
+    }
+
+    .section-icon {
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <section class="section">
+      <h1>Sidebar</h1>
+      <h1>_________________</h1>
+    </section>
+
+    <section class="section">
+      <label class="section-title" ><i class="fas fa-chart-bar section-icon"></i>Dashboard</label>
+    </section>
+
+    <section class="section">
+      <label class="section-title" ><i class="fas fa-box section-icon"></i>Products</label>
+    </section>
+
+    <section class="section">
+      <label class="section-title" ><i class="fas fa-calendar-alt section-icon"></i>Events</label>
+    </section>
+
+    <section class="section">
+      <label class="section-title" ><i class="fas fa-cogs section-icon"></i>Services</label>
+    </section>
+
+    <section class="section">
+      <label class="section-title" ><i class="fas fa-info-circle section-icon"></i>About</label>
+    </section>
+
+    <section class="section">
+      <label class="section-title" ><i class="fas fa-envelope section-icon"></i>Contact</label>
+    </section>
+  </div>
+
+  <div class="content">
+    
+  </div>
+</body>
+</html>

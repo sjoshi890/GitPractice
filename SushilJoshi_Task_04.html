@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sidebar Demo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <style>
+    .sidebar {
+      width: 250px;
+      background-color: rgb(17, 42, 42);
+      padding: 20px;
+      color: wheat;
+      padding-top: 5%;
+      padding-bottom: 20%;
+    }
+
+    .section {
+      margin-bottom: 15px;
+      font-size: larger;
+    }
+
+    .section>label {
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      color: white;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .section-header {
+      color: cadetblue;
+    }
+
+    h1 {
+      color: cadetblue;
+    }
+
+    .section-icon {
+      margin-right: 5px;
+    }
+
+    .subsection {
+      display: none;
+      padding-left: 10px;
+    }
+
+    a {
+      color: wheat;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: yellow;
+    }
+
+    a:hover i {
+      color: yellow;
+    }
+
+    a:hover p {
+      color: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <section class="section">
+      <h1>Sidebar</h1>
+      <h1>_________________</h1>
+    </section>
+
+    <section class="section">
+      <label class="section-title" for="section1"><i class="fas fa-chart-bar section-icon"></i>Dashboard</label>
+      <div class="subsection">
+        <p><a href="#"><i class="fas fa-angle-right"></i> Sprints</a></p>
+        <p><a href="#"><i class="fas fa-angle-right"></i> Queries</a></p>
+        <p><a href="#"><i class="fas fa-angle-right"></i> Boards</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <label class="section-title" for="section2"><i class="fas fa-box section-icon"></i>Products</label>
+      <div class="subsection">
+        <p><a href="#"><i class="fas fa-angle-right"></i> Electronics</a></p>
+        <p><a href="#"><i class="fas fa-angle-right"></i> Appliances</a></p>
+        <p><a href="#"><i class="fas fa-angle-right"></i> Fashion</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <label class="section-title" for="section3"><i class="fas fa-calendar-alt section-icon"></i>Events</label>
+      <div class="subsection">
+        <p><a href="#"><i class="fas fa-angle-right"></i> Today</a></p>
+        <p><a href="#"><i class="fas fa-angle-right"></i> This Month</a></p>
+        <p><a href="#"><i class="fas fa-angle-right"></i> This Year</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <label class="section-title" for="section4"><i class="fas fa-cogs section-icon"></i>Services</label>
+      <div class="subsection">
+        <p><a href="#"><i class="fas fa-angle-right"></i> Spa</a></p>
+        <p><a href="#"><i class="fas fa-angle-right"></i> Car Washing</a></p>
+        <p><a href="#"><i class="fas fa-angle-right"></i> Repairing</a></p>
+      </div>
+    </section>
+
+    <section class="section">
+      <label class="section-title" for="section5"><i class="fas fa-info-circle section-icon"></i>About</label>
+      <div class="subsection">
+        <p><a href="#"><i class="fas fa-angle-right"></i> This is the About subsection</p>
+        <p><a href="#"><i class="fas fa-angle-right"></i> We can add more sections like this</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <label class="section-title" for="section6"><i class="fas fa-envelope section-icon"></i>Contact</label>
+      <div class="subsection">
+        <p><a href="#"><i class="fas fa-angle-right"></i> Contact athar@gmail.com</a></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.section-title').click(function () {
+        var subsection = $(this).parent().find('.subsection');
+        subsection.slideToggle();
+      });
+    });
+  </script>
+</body>
+
+</html>

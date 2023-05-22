@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS-Grid-Demo</title>
+    <style>
+      .header-grid {
+        grid-area: header;
+        background-color: rgb(84, 82, 82);
+        color: white;
+        text-align: center;
+      }
+
+      .side-bar {
+        grid-area: nav;
+        background-color: gray;
+      }
+
+      .box-grid-1 {
+        grid-area: box-1;
+        background-color: rgb(246, 108, 108);
+        margin: 5px;
+        border-width: thin;
+        border: solid whitesmoke;
+      }
+
+      .box-grid-2 {
+        grid-area: box-2;
+        background-color: crimson;
+        margin: 5px;
+        border-width: thin;
+        border: solid whitesmoke;
+      }
+
+      .box-grid-3 {
+        grid-area: box-3;
+        background-color: orangered;
+        margin: 5px;
+        border-width: thin;
+        border: solid whitesmoke;
+      }
+
+      .box-grid-4 {
+        grid-area: box-4;
+        background-color: bisque;
+        margin: 5px;
+        border-width: thin;
+        border: solid whitesmoke;
+      }
+
+      .box-grid-5 {
+        grid-area: box-5;
+        background-color: darkolivegreen;
+        margin: 5px;
+        border-width: thin;
+        border: solid whitesmoke;
+      }
+
+      .box-grid-6 {
+        grid-area: box-6;
+        background-color: gold;
+        margin: 5px;
+        border-width: thin;
+        border: solid whitesmoke(219, 207, 207);
+      }
+
+      .footer-grid {
+        grid-area: footer;
+        background-color: rgb(3, 0, 0);
+        color: white;
+        text-align: center;
+      }
+
+      .grid-container > div {
+        font-size: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+      }
+      
+      .grid-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 100px 100px 100px 100px 100px 100px 100px 100px 100px;
+        grid-template-areas:
+          "header header header header header"
+          "nav box-1 box-1 box-2 box-4"
+          "nav box-1 box-1 box-2 box-4"
+          "nav box-5 box-3 box-2 box-4"
+          "nav box-5 box-3 box-2 box-4"
+          "nav box-5 box-3 box-2 box-4"
+          "nav box-5 box-6 box-6 box-6"
+          "nav box-5 box-6 box-6 box-6"
+          "footer footer footer footer footer"
+          "footer footer footer footer footer";
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="header-grid"><h1>Header</h1>
+        
+      </div>
+      <div class="side-bar"><h1>Sidebar</h1></div>
+      <div class="box-grid-1">
+        <h3>Box 1</h3>
+        <p>The CSS box model describes the design and layout of elements on a webpage. It consists of the content area, padding, border, and margin.</p>
+      </div>
+      
+      <div class="box-grid-2">
+        <h3>Box 2</h3>
+        <p>Padding is the space between the content and the border of an element. It can be used to create spacing and add visual appeal to elements.</p>
+      </div>
+      
+      <div class="box-grid-3">
+        <h3>Box 3</h3>
+        <p>The border defines the boundary of an element. It can have different styles, such as solid, dashed, or dotted, and can be customized using CSS properties.</p>
+      </div>
+      
+      <div class="box-grid-4">
+        <h3>Box 4</h3>
+        <p>Margin is the space outside an element. It creates the gap between elements and affects the overall layout of the webpage.</p>
+      </div>
+      
+      <div class="box-grid-5">
+        <h3>Box 5</h3>
+        <p>The box-sizing property determines how the total width and height of an element is calculated. The default value is "content-box", but you can also use "border-box" to include padding and border in the element's total dimensions.</p>
+      </div>
+      
+      <div class="box-grid-6">
+        <h3>Box 6</h3>
+        <p>CSS offers various properties to control the box model, such as width, height, padding, border, and margin. By manipulating these properties, you can create visually appealing layouts and designs for your webpages.</p>
+      </div>
+      
+      <div class="footer-grid"><h1>Footer</h1></div>
+    </div>
+  </body>
+</html>
